@@ -103,7 +103,14 @@ jobs:
         uses: azure/setup-kubectl@v3
         with:
           version: 'latest'
-          
+      - name: 10.서비스 리포지토리 체크아웃
+        uses: actions/checkout@v4
+        with:
+          repository: ekchoi391201/istory-platform   # 바꾸기
+          ref: main # 바꾸기
+          path: .
+          token: ${{ secrets.GIT_PAT }}          
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
