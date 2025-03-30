@@ -140,7 +140,7 @@ jobs:
             --from-literal=MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} \
             --from-literal=DATABASE_URL=${{ secrets.DATABASE_URL }} \
             --from-literal=MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} \
-            --namespace=default \
+            --namespace=istory-prod \
             --dry-run=client -o yaml | kubectl apply -f -
 
       - name: 16. kustomize install
